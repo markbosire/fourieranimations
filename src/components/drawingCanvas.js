@@ -24,7 +24,7 @@ function calculateFourierSeries(time, coeffs) {
 }
 
 function DrawingCanvas() {
-  const [selectedShape, setSelectedShape] = useState("pentagon");
+  const [selectedShape, setSelectedShape] = useState("decagon");
   const canvasRef = useRef(null);
 
   useEffect(() => {
