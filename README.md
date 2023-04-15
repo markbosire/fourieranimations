@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### The code
+
+There is a React component called "DrawingCanvas" that creates a canvas element and uses Fourier coefficients to draw simple animations on it. It defines an object called "shapeCoefficients" that contains two properties, "pentagon" and "decagon", each of which is an array of coefficients used to define a shape.
+
+It has a function called "calculateFourierSeries" that takes two arguments, "time" and "coeffs", and uses the coefficients to calculate a series of points that define the shape of the object at that time. The component uses useState to create a state variable called "selectedShape" that defaults to "pentagon". It uses useRef to create a reference to a canvas element that will be used to display the animation.
+
+The component uses useEffect to set up a continuous animation loop. The loop uses the "requestAnimationFrame" method to redraw the canvas element at a constant frame rate. It uses the "calculateFourierSeries" function to calculate the points that define the shape of the selected object at each frame, and then calls a "drawShape" function to draw the shape on the canvas. The "drawShape" function takes two arguments, a context object and an array of points. It uses the "moveTo" and "lineTo" methods of the context object to draw a polygon using the points.
+
+The component also has a function called "handleChange" that is called when the user selects a different shape from a dropdown menu. It updates the "selectedShape" state variable.
